@@ -1,0 +1,15 @@
+food(pizza).
+bird(parrot).
+island(srilanka).
+animal(dog).
+fruit(kiwi).
+fruit(apple).
+fruit(grapes).
+weapon(gun).
+hardware(keyboard).
+android_phone(samsung).
+male(kamal).
+student(john).
+black(elephant).
+shape(circle).
+vehicle(bus).

@@ -1,6 +1,6 @@
 ---
 
-# Prolog Family Relations Tutorial
+# Rules and Queries
 
 This tutorial explains **facts, rules, and queries in Prolog** using a simple family relationship example.
 

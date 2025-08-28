@@ -1,0 +1,86 @@
+?- parent_of(bob,tom).
+false.
+
+?- parent_of(tom,bob).
+true ;
+false.
+
+?- parent_of(tom,bob).
+true .
+
+?- parent_of(X,pat).
+X = bob.
+
+?- parent_of(liz,pat).
+false.
+
+?- parent_of(tom,ben).
+false.
+
+?- parent_of(Y,bob).
+Y = tom ;
+Y = pam.
+
+?- parent_of(X,Y).
+X = tom,
+Y = bob ;
+X = pam,
+Y = bob ;
+X = tom,
+Y = liz ;
+X = bob,
+Y = ann ;
+X = bob,
+Y = pat ;
+X = pat,
+Y = jim.
+
+//Grandparent of jim?
+?- parent_of(GrandParent,Parent),parent_of(Parent,jim).
+GrandParent = bob,
+Parent = pat .
+
+//Grandchildren of tom?
+?- parent_of(tom,Child),parent_of(Child,GrandChild).
+Child = bob,
+GrandChild = ann ;
+Child = bob,
+GrandChild = pat .
+
+//Do ann and pat has same parent?
+?- parent_of(X,ann),parent_of(X,pat).
+X = bob.
+
+//Do ann and tom hase same parent?
+?- parent_of(X,ann),parent_of(Y,tom).
+false.
+
+?- parent_of(X,pat).
+X = bob.
+
+//Does liz has children?
+?- parent_of(liz,Y).
+false.
+
+//Pats grand parent?
+?- parent_of(GrandParent,Parent),parent_of(Parent,pat).
+GrandParent = tom,
+Parent = bob ;
+GrandParent = pam,
+Parent = bob ;
+
+?- parent_of(jim,X).
+false.
+
+?- parent_of(X,jim).
+X = pat.
+
+?- parent_of(pam,X),parent_of(X,pat).
+X = bob.
+
+?- parent_of(pam,X),parent_of(X,Y),parent_of(Y,jim).
+X = bob,
+Y = pat.
+
+?- happy(pam).
+true.
